@@ -159,8 +159,8 @@ def seen_handler(name):
 	while 1:
 		for device in globals.SEEN_DEVICES:
 			if 'present' in globals.SEEN_DEVICES[device] and globals.SEEN_DEVICES[device]['present'] == 1:
-				if (globals.SEEN_DEVICES[device]['lastseen'] + 30) < int(time.time()):
-					logging.info('Not SEEEEEEEEEN------ since 30s '+ str(device))
+				if (globals.SEEN_DEVICES[device]['lastseen'] + 15) < int(time.time()):
+					logging.info('Not SEEEEEEEEEN------ since 15s '+ str(device))
 					globals.SEEN_DEVICES[device]['present'] = 0
 					action = {}
 					action['present']=0
