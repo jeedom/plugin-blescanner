@@ -125,7 +125,7 @@ def listen():
 					globals.LAST_CLEAR = int(time.time())
 				globals.SCANNER.start()
 				if globals.LEARN_MODE:
-					globals.SCANNER.process(4)
+					globals.SCANNER.process(2)
 				else:
 					globals.SCANNER.process(1)
 				globals.SCANNER.stop()
@@ -159,8 +159,8 @@ def seen_handler(name):
 	while 1:
 		for device in globals.SEEN_DEVICES:
 			if 'present' in globals.SEEN_DEVICES[device] and globals.SEEN_DEVICES[device]['present'] == 1:
-				if (globals.SEEN_DEVICES[device]['lastseen'] + 15) < int(time.time()):
-					logging.info('Not SEEEEEEEEEN------ since 15s '+ str(device))
+				if (globals.SEEN_DEVICES[device]['lastseen'] + 9) < int(time.time()):
+					logging.info('Not SEEEEEEEEEN------ since 9s '+ str(device))
 					globals.SEEN_DEVICES[device]['present'] = 0
 					action = {}
 					action['present']=0
