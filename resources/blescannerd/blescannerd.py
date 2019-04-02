@@ -102,6 +102,7 @@ class ScanDelegate(DefaultDelegate):
 						globals.SEEN_DEVICES[action['id']]['present'] = 1
 						logging.info('RE SEEEEEEEEEN------' + str(action['id']) + ' || ' +str(globals.SEEN_DEVICES))
 					elif globals.SEEN_DEVICES[action['id']]['present'] == 1:
+						globals.JEEDOM_COM.add_changes('devices::'+action['id'],action)
 						globals.SEEN_DEVICES[action['id']]['lastseen'] = int(time.time())
 						
 
